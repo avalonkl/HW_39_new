@@ -7,7 +7,7 @@ import org.openqa.selenium.safari.*;
  
 public class Safari_P1 {
  
-        static WebDriver driver;
+        static WebDriver  driver;
  
         public static void main(String[] args) throws InterruptedException {
               

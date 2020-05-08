@@ -17,7 +17,7 @@ public class Firefox_P3 {
 
 		System.out.println("Browser: Firefox");
 
-		System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver.sh");
 		driver = new FirefoxDriver();
 		
 		WebDriverWait wait = new WebDriverWait(driver, 15);
@@ -33,10 +33,12 @@ public class Firefox_P3 {
 
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("pass"))).sendKeys(System.getenv("fb_password"));
 		
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath 	("//*[contains(@value,'Log In')]"))).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@value,'Log In')]"))).click();
 		
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@class,'_1vp5')]"))).click();
+		//Thread.sleep(1000);
+		//System.out.println("Title: " + driver.getTitle());
+		wait.until(ExpectedConditions.titleContains(") Facebook"));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@class,'_1vp5')]"))).click();
 		
 		String friends = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='_gs6']"))).getText();
 

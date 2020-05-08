@@ -17,7 +17,7 @@ public class Firefox_P2 {
 
 		System.out.println("Browser: Firefox");
 
-		System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver.sh");
 		driver = new FirefoxDriver();
 
 		WebDriverWait wait = new WebDriverWait(driver, 15);
